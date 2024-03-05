@@ -1,10 +1,36 @@
 import 'package:flutter/material.dart';
 import 'vision_detector_views/text_detector_view.dart';
 
-Future<void> main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-
+void main() {
   runApp(MyApp());
+}
+
+class SplashScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    Future.delayed(Duration(seconds: 3), () {
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => Home()),
+      );
+    });
+
+    return Scaffold(
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Image.asset('assets/images/eqhorse.png'), // Replace 'assets/logo.png' with your image path
+            SizedBox(height: 20),
+            Text(
+              'Equilibrium',
+              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
 }
 
 class MyApp extends StatelessWidget {
@@ -12,7 +38,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Home(),
+      home: SplashScreen(), // Set SplashScreen as the initial route
     );
   }
 }
