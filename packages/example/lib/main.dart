@@ -24,7 +24,7 @@ class Home extends StatelessWidget {
       appBar: AppBar(
         title: Text('Equilibrium'),
         centerTitle: true,
-        elevation: 0,
+        elevation: 5,
       ),
       body: SafeArea(
         child: Center(
