@@ -31,7 +31,7 @@ class TextRecognizerPainter extends CustomPainter {
     final Paint background = Paint()..color = Color(0x99000000);
 
     for (final textBlock in recognizedText.blocks) {
-      final ParagraphBuilder builder = ParagraphBuilder(
+      /*final ParagraphBuilder builder = ParagraphBuilder(
         ParagraphStyle(
             textAlign: TextAlign.left,
             fontSize: 16,
@@ -40,7 +40,7 @@ class TextRecognizerPainter extends CustomPainter {
       builder.pushStyle(
           ui.TextStyle(color: Colors.lightGreenAccent, background: background));
       builder.addText(textBlock.text);
-      builder.pop();
+      builder.pop(); */
 
       final left = translateX(
         textBlock.boundingBox.left,
@@ -155,7 +155,6 @@ class TextRecognizerPainter extends CustomPainter {
               break;
           }
         }
-
         cornerPoints.add(Offset(x, y));
       }
 
@@ -163,7 +162,7 @@ class TextRecognizerPainter extends CustomPainter {
       cornerPoints.add(cornerPoints.first);
       canvas.drawPoints(PointMode.polygon, cornerPoints, paint);
 
-      canvas.drawParagraph(
+      /*canvas.drawParagraph(
         builder.build()
           ..layout(ParagraphConstraints(
             width: (right - left).abs(),
@@ -174,7 +173,7 @@ class TextRecognizerPainter extends CustomPainter {
                 ? right
                 : left,
             top),
-      );
+      );*/
     }
   }
 
