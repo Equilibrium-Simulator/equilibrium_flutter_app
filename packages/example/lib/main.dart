@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'vision_detector_views/text_detector_view.dart';
 
+
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
@@ -22,9 +23,9 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Equilibrium'),
+        title: Text('EQUILIBRIUM'),
         centerTitle: true,
-        elevation: 5,
+        elevation: 10,
       ),
       body: SafeArea(
         child: Center(
@@ -33,14 +34,6 @@ class Home extends StatelessWidget {
               padding: EdgeInsets.symmetric(horizontal: 16),
               child: Column(
                 children: [
-                  //ACTION_SHOULDER_HIP_HEEL_ALIGN = 0;
-                  //ACTION_STEADY_SHOULDER = 1;                      //No motion on X or Y axis
-                  //ACTION_STEADY_HANDS = 2;                         //No motion on X or Y axis
-                  //ACTION_HEELS_DOWN = 3;                           //No motion on X or Y axis
-                  //ACTION_LEFT_RIGHT_SHOULDER_ALIGN = 4;            //Shoulders need to be aligned and on same Y axis
-                  //ACTION_TOES_FORWARD = 5;                          //No motion
-                  //ACTION_FOLLOWING_SEAT = 6;                        //Only X axis motion should be present, no Y axis motion
-                  //ACTION_MAX = 7;
                   ExpansionTile(
                     title: const Text('Side Camera'),
                     children: [

@@ -164,6 +164,7 @@ class _CameraViewState extends State<CameraView> {
     bool start = false;
 
     if(_recording == false) {
+      //start = await FlutterScreenRecording.startRecordScreenAndAudio("Title");
       start = await FlutterScreenRecording.startRecordScreen("Title");
       // print('rotationCompensation: $rotationCompensation');
       if (start) {
@@ -172,14 +173,12 @@ class _CameraViewState extends State<CameraView> {
     } else {
       String path = await FlutterScreenRecording.stopRecordScreen;
       setState(() {_recording = !_recording; });
+      print("Opening video");
+      print(path);
+      //OpenFile.open(path);
     }
   }
 
-//  stopScreenRecord() async {
-    //print("Opening video");
-    //print(path);
-    //OpenFile.open(path);
-//  }
 
   Future _stopLiveFeed() async {
     await _controller?.stopImageStream();
