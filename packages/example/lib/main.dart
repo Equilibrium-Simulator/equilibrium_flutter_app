@@ -1,36 +1,11 @@
 import 'package:flutter/material.dart';
 import 'vision_detector_views/text_detector_view.dart';
 
-void main() {
+
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
   runApp(MyApp());
-}
-
-class SplashScreen extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    Future.delayed(Duration(seconds: 3), () {
-      Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(builder: (context) => Home()),
-      );
-    });
-
-    return Scaffold(
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Image.asset('assets/images/eqhorse.png'), // Replace 'assets/logo.png' with your image path
-            SizedBox(height: 20),
-            Text(
-              'Equilibrium',
-              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
 }
 
 class MyApp extends StatelessWidget {
@@ -38,7 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: SplashScreen(), // Set SplashScreen as the initial route
+      home: Home(),
     );
   }
 }
@@ -48,9 +23,9 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Equilibrium'),
+        title: Text('EQUILIBRIUM'),
         centerTitle: true,
-        elevation: 5,
+        elevation: 10,
       ),
       body: SafeArea(
         child: Center(
@@ -59,14 +34,6 @@ class Home extends StatelessWidget {
               padding: EdgeInsets.symmetric(horizontal: 16),
               child: Column(
                 children: [
-                  //ACTION_SHOULDER_HIP_HEEL_ALIGN = 0;
-                  //ACTION_STEADY_SHOULDER = 1;                      //No motion on X or Y axis
-                  //ACTION_STEADY_HANDS = 2;                         //No motion on X or Y axis
-                  //ACTION_HEELS_DOWN = 3;                           //No motion on X or Y axis
-                  //ACTION_LEFT_RIGHT_SHOULDER_ALIGN = 4;            //Shoulders need to be aligned and on same Y axis
-                  //ACTION_TOES_FORWARD = 5;                          //No motion
-                  //ACTION_FOLLOWING_SEAT = 6;                        //Only X axis motion should be present, no Y axis motion
-                  //ACTION_MAX = 7;
                   ExpansionTile(
                     title: const Text('Side Camera'),
                     children: [
