@@ -130,7 +130,7 @@ class _ProgressPageState extends State<ProgressPage> {
                     );
                   },
                   child: Icon(
-                    Icons.auto_graph,
+                    Icons.calendar_month,
                     size: 40,
                     color: Colors.white,
                   ),
